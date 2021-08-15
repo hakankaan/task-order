@@ -31,7 +31,7 @@ class TaskController extends Controller
         try {
             $tasks = self::getTasks();
 
-            return response()->json(['tasks' => $tasks]);
+            return response()->json(['tasks' => $tasks], 200);
         } catch (\Throwable $th) {
             return $th;
         }
@@ -54,7 +54,7 @@ class TaskController extends Controller
 
 
 
-            return response()->json(["task" => $tmpTasks->values()->toArray()]);
+            return response()->json(["tasks" => $tmpTasks->values()->toArray()], 200);
         } catch (\Throwable $th) {
             return $th;
         }
@@ -70,7 +70,7 @@ class TaskController extends Controller
             $new_task["prerequisities"] = [];
             array_push($tasks, $new_task);
             Storage::disk('local')->put('tasks.json', json_encode($tasks));
-            return response()->json(['added_task' => $new_task]);
+            return response()->json(['added_task' => $new_task], 200);
         } catch (\Throwable $th) {
             return $th;
         }
@@ -104,7 +104,7 @@ class TaskController extends Controller
 
 
         Storage::disk('local')->put('tasks.json', json_encode($tasks));
-        return response()->json(['prerequisities' => $task['prerequisities'], 'failed_prerequisities' =>  $failed_prerequisities]);
+        return response()->json(['result' => "success", 'failed_prerequisities' =>  $failed_prerequisities], 200);
     }
 
 
