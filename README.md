@@ -2,7 +2,7 @@
 
 Start the server with **php artisan serve** command
 
-## api/create-task
+## api/create-task - (post)
 
 Requirements of "country" and "amount" fields are depends on "type" value.
 Accepted types: "invoice_ops", "custom_ops", "common_ops"
@@ -24,7 +24,7 @@ or
 > "amount": {"currency": "€", "quantity": 1000}
 > }
 
-## api/add-prerequisities
+## api/add-prerequisities - (put)
 
 
 **Request Body**:
@@ -34,11 +34,11 @@ or
 > "prerequisities": ["task_6", "task_1"]
 > }
 
-## api/tasks
+## api/tasks - (get)
 
 Returns all tasks without order
 
-## api/task-order
+## api/task-order - (get)
 
 Returns the tasks with order
 
