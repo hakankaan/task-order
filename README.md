@@ -40,7 +40,7 @@ Returns all tasks without order
 
 ## api/task-order
 
-Returns the tasks with prerequisites order
+Returns the tasks with order
 
 **Response**
 
