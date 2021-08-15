@@ -7,6 +7,7 @@ Start the server with **php artisan serve** command
 Requirements of "country" and "amount" fields are depends on "type" value.
 Accepted types: "invoice_ops", "custom_ops", "common_ops"
 Accepted currencies: €, ₺, $, £
+
 **Request Body**:
 
 > {
@@ -25,6 +26,7 @@ or
 
 ## api/add-prerequisities
 
+
 **Request Body**:
 
 > {
@@ -39,6 +41,7 @@ Returns all tasks without order
 ## api/task-order
 
 Returns the tasks with prerequisites order
+
 **Response**
 
     {
